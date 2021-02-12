@@ -22,8 +22,44 @@ class HomePage extends StatelessWidget {
               child: Text("Show Snackbar"),
             ),
             RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.defaultDialog(
+                    title: "Title",
+                    middleText: "This is Text Dialoge",
+                    textConfirm: "Confirm",
+                    confirmTextColor: Colors.white,
+                    textCancel: "Cancel");
+              },
               child: Text("Show Dialoge"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Get.bottomSheet(
+                  Container(
+                    height: 200,
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: Icon(Icons.nights_stay),
+                          title: Text("Dark Theme"),
+                          onTap: () {
+                            Get.changeTheme(ThemeData.dark());
+                          },
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.wb_sunny_outlined),
+                          title: Text("Light Theme"),
+                          onTap: () {
+                            Get.changeTheme(ThemeData.light());
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+                  backgroundColor: Colors.white,
+                );
+              },
+              child: Text("Bottom Sheet"),
             )
           ],
         ),
