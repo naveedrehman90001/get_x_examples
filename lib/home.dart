@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'Screens/counterApp.dart';
+
 class HomePage extends StatelessWidget {
   _body() {
     return Container(
@@ -33,6 +35,16 @@ class HomePage extends StatelessWidget {
               child: Text("Show Dialoge"),
             ),
             RaisedButton(
+              child: Text("Go To Counter App"),
+              onPressed: () {
+                Get.to(
+                  CounterApp(),
+                  transition: Transition.zoom,
+                  duration: Duration(milliseconds: 500),
+                );
+              },
+            ),
+            RaisedButton(
               onPressed: () {
                 Get.bottomSheet(
                   Container(
@@ -60,7 +72,10 @@ class HomePage extends StatelessWidget {
                 );
               },
               child: Text("Bottom Sheet"),
-            )
+            ),
+            RaisedButton(
+              onPressed: () {},
+            ),
           ],
         ),
       ),
