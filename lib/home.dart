@@ -45,6 +45,16 @@ class HomePage extends StatelessWidget {
               },
             ),
             RaisedButton(
+              child: Text("Internationilization / Translation Page"),
+              onPressed: () {
+                Get.to(
+                  CounterApp(),
+                  transition: Transition.zoom,
+                  duration: Duration(milliseconds: 500),
+                );
+              },
+            ),
+            RaisedButton(
               onPressed: () {
                 Get.bottomSheet(
                   Container(
